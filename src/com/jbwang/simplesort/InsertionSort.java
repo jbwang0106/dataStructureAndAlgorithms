@@ -1,4 +1,4 @@
-package simplesort;
+package com.jbwang.simplesort;
 
 /** 插入排序
  *  适用于部分有序的数组
@@ -13,6 +13,28 @@ public class InsertionSort {
 
         System.out.println("排序前：");
         display();
+
+        sort();
+
+        System.out.println("排序后: ");
+        display();
+
+        int medain = medain();
+        System.out.println("中间数值为：" + medain);
+        
+    }
+
+    public static void display() {
+        for (int i = 0; i < array.length; i++)
+            System.out.print(array[i] + " ");
+
+        System.out.println();
+    }
+
+    /**
+     * 排序
+     */
+    public static void sort() {
         int temp = 0;
         for (int i = 1; i < array.length; i++) {
             temp = array[i];
@@ -24,16 +46,21 @@ public class InsertionSort {
 
             array[j] = temp; //在空的位置插入这个值
         }
-
-        System.out.println("排序后: ");
-        display();
     }
 
-    public static void display() {
-        for (int i = 0; i < array.length; i++)
-            System.out.print(array[i] + " ");
+    public static int medain() {
+        sort();
+        int length = array.length;
+        int mid = 0;
+        if(length%2 == 0)
+            mid = length/2-1;
+        else
+            mid = (length+1)/2-1;
+        return array[mid];
+    }
 
-        System.out.println();
+    public static void noDups() {
+
     }
 
 }

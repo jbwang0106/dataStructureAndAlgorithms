@@ -1,4 +1,4 @@
-package simplesort;
+package com.jbwang.simplesort;
 
 /**选选择排序算法
  * 在未排序序列中找到最小元素，存放到排序序列的起始位置
@@ -9,7 +9,15 @@ package simplesort;
  */
 public class SelectSort {
 
-    public static int [] array = {23,87,45,95,34,57,61};
+    public static int [] array = new int[10000];
+    public static int maxSize = array.length;
+
+    static {
+        for (int i = 0; i < maxSize; i++) {
+            int n = (int) (Math.random() * (maxSize-1));
+            array[i] = n;
+        }
+    }
 
     public static void main(String [] args) {
 

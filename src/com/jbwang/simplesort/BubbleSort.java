@@ -1,4 +1,4 @@
-package simplesort;
+package com.jbwang.simplesort;
 
 /**
  * 冒泡排序
@@ -17,16 +17,9 @@ public class BubbleSort {
     public static void main(String [] args) {
         System.out.println("排序前:");
         display();
-        int temp = 0;
-        for (int i = 0; i < array.length -1; i++) { //外层循环控制比较的轮数
-            for (int j = 0; j < array.length -1-i; j++) { //内层循环控制每轮需要比较的次数
-                if(array[j] > array[j+1]) {
-                    temp = array[j];
-                    array[j] = array[j+1];
-                    array[j+1] = temp;
-                }
-            }
-        }
+
+        //sort();
+        sortTe();
 
         System.out.println("排序后:");
         display();
@@ -38,5 +31,34 @@ public class BubbleSort {
             System.out.print(array[i] + " ");
         
         System.out.println();
+    }
+
+    public static void sort() {
+        int temp = 0;
+        for (int i = 0; i < array.length -1; i++) { //外层循环控制比较的轮数
+            for (int j = 0; j < array.length -1-i; j++) { //内层循环控制每轮需要比较的次数
+                if(array[j] > array[j+1]) {
+                    temp = array[j];
+                    array[j] = array[j+1];
+                    array[j+1] = temp;
+                }
+            }
+        }
+    }
+
+    /**
+     * 编程作业3.1
+     * http://www.myexception.cn/program/690593.html
+     */
+    public static void sortTe() {
+        int left = 0,right = array.length -1,in; //定义需要的变量
+        for (;right > left;right--,left++) {
+        }
+    }
+
+    public static void swap(int one, int two) {
+        int temp = array[one];
+        array[one] = array[two];
+        array[two] = temp;
     }
 }
