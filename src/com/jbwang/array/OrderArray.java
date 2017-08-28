@@ -43,8 +43,9 @@ public class OrderArray {
         int curIn; //元素所在的位置
 
         while (true) {
+            //找出中间的索引
             curIn = (lowerBound + upperBound) / 2;
-            if(array[curIn] == searchKey) {
+            if(array[curIn] == searchKey) { //如果等于要查找的元素就直接返回
                 return curIn;
             } else if(lowerBound > upperBound) {
                 return nElems;
