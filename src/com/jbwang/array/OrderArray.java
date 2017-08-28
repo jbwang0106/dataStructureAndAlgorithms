@@ -45,13 +45,13 @@ public class OrderArray {
         while (true) {
             //找出中间的索引
             curIn = (lowerBound + upperBound) / 2;
-            if(array[curIn] == searchKey) { //如果等于要查找的元素就直接返回
+            if(array[curIn] == searchKey) { //如果等于要查找的元素就直接返回该元素所在的索引
                 return curIn;
-            } else if(lowerBound > upperBound) {
-                return nElems;
+            } else if(lowerBound > upperBound) {  //开始的索引大于结束的索引则返回数组的长度，即没有找到元素
+                return nElems; 
             } else {
-                if(array[curIn] < searchKey) {
-                    lowerBound = curIn + 1;
+                if(array[curIn] < searchKey) {  //减半操作
+                    lowerBound = curIn + 1; 
                 } else {
                     upperBound = curIn - 1;
                 }
