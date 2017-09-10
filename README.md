@@ -82,5 +82,3 @@
 
 
 
-
---记得观看imooc的redis视频和gradle构建
